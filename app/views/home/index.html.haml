@@ -1,0 +1,25 @@
+%h2 Welcome
+
+%p
+  In My Spare Time is a place to show off those apps you created in your spare time. Thanks to
+  = link_to 'Michael Bumann', 'http://railslove.com'
+  for the idea.
+
+%br  
+
+#column{:style => 'margin-left:10%'}
+  %h2 Newest Projects
+  %br
+  - @new_projects.each do |project|
+    %p= link_to project.title, resource(project)
+    
+#column
+  %h2 Highest Rated Projects
+  %br
+  - @highest_rated.each do |project|
+    %p
+      = link_to project.title, resource(project)
+      \-
+      = project.hearts.size
+      vote
+    

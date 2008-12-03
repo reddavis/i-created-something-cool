@@ -1,0 +1,36 @@
+!!! Strict
+%html{ html_attrs("en_us") }
+  %head
+    %title
+      Fresh Merb App
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
+    %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
+  %body
+    
+    #header 
+      %h1= link_to 'In My Spare Time...', '/'
+      = partial 'shared/user_bar'
+    
+    #content
+      - unless message.blank?
+        #flash
+          &= message
+      = partial 'shared/navigation'
+      = catch_content :for_layout
+      
+      
+    #footer
+      %hr
+      %p
+        Like this? You may also like
+        = link_to 'Embedit', 'http://embedit.me'
+        \-
+        = link_to 'Twitter Embed Stream', 'http://twitterembedstream.com'
+        \-
+        = link_to 'Green Thing', 'http://dothegreenthing.com'
+        \-
+        = link_to 'Is Monday Ok?', 'http://ismondayok.com'
+      %p
+        Created by
+        = link_to 'Red Davis', 'http://redwriteshere.com'
+      %p "Release early release often"

@@ -1,0 +1,21 @@
+#center  
+  %h1= @project.title
+
+  %h2
+    Created by
+    = link_to @project.user.name
+  
+  %h2= link_to @project.link, @project.link
+
+  %p{:class => 'likes'}
+    likes:
+    = @project.hearts.size
+    \-
+    - unless @project.already_hearted?(current_user)
+      = link_to 'I Like This', url(:controller => :hearts, :action => :create, :project_stub => @project.stub)
+    - else
+      I liked This
+
+  %h2{:class => 'description'} Description
+
+  %p= @project.description

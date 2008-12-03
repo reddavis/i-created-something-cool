@@ -1,0 +1,8 @@
+#user_bar
+  - if current_user
+    = current_user.email
+    = link_to 'Logout', url(:controller => :session, :action => :destroy)
+  - else
+    = link_to 'Register', resource(:users, :new)
+    \/
+    = link_to 'Login', url(:controller => :session, :action => :new)

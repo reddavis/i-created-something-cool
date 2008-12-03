@@ -1,0 +1,9 @@
+#center
+  = form :action => url(:action => :create), :id => 'form' do
+    %p Email
+    %p= text_field :name => :email
+  
+    %p Password
+    %p= password_field :name => :password
+  
+    %p= submit 'Login', :class => 'submit_button'

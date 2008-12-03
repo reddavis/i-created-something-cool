@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 0.9em;
+  background-color: #fff;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+html {
+  height: 100%;
+  margin-bottom: 1px;
+}
+
+h1 a {color:black;}
+
+#content {
+  width: 80%;
+  text-align: left;
+  margin-right: auto;
+	padding-top:20px;
+  margin-left: auto;
+	clear:both;
+}
+
+#footer {
+	font-size:0.8em;
+	width:80%;
+	margin:0 auto 0 auto;
+	clear:both;
+}
+
+p {font-size:1.5em;}
+
+/* Header */
+
+#header {margin:10px 0 20px 100px; font-size:1.5em;}
+
+#header h1 {width:30%;float:left;}
+
+/* User Bar */
+
+#user_bar {
+	margin-right:20px;
+	float:right;
+}
+
+/* Navigation */
+
+#navigation {
+	float:right;
+	margin:0px 0 0 0;
+}
+
+/* Project Show*/
+
+p.likes {margin-top:20px;}
+
+h2.description {margin-top:20px;}
+
+/* Column */
+
+#column {
+	text-align:center;
+	font-size:1.3em;
+	width:400px;
+	height:500px;
+	float:left;
+}
+
+#center {
+	font-size:1.5em;
+	margin:0 auto 20px auto;
+}
+
+/* Form */
+
+#form input {
+	font-size:1em;
+	margin-bottom:20px;
+}
+
+#form {
+	margin:30px auto 0 auto;
+}
+
+input.submit_button {width:200px;border:solid 1px;}
+
+/* Flash */
+
+#flash {
+	width:100%;
+	padding:10px 0 10px 20px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#ffffcc;
+	border:solid 2px #f6e6a0;
+	text-align:center;
+}

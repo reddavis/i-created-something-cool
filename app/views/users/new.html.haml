@@ -1,0 +1,20 @@
+#center
+  %h1 Register
+
+  = error_messages_for @user
+
+  = form_for @user, :action => resource(:users), :id => 'form' do
+    %p Email
+    %p= text_field :email
+  
+    %p Your Name
+    %p= text_field :name
+  
+    %p Password
+    %p= password_field :password
+  
+    %p Confirm That Password
+    %p= password_field :password_confirmation
+  
+    %p
+      = submit 'Sign Up', :class => 'submit_button'

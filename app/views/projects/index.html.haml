@@ -1,0 +1,14 @@
+%h1 Everyones Projects!
+
+#center{:style => 'text-align:center'}
+  - @projects.each do |project|
+    %h2= link_to project.title, resource(project)
+    %p
+      By
+      = project.user.name
+    %p
+      = project.hearts.size
+      people liked this.
+    %br
+    
+    = will_paginate(@projects)
