@@ -45,7 +45,7 @@ namespace :deploy do
     
   task :before_deploy do
     #run "monit quit"
-    run "merb -m #{current_path} -K -p 6000"
+    run "merb -m #{current_path} -K all"
     #run "cd #{current_path}; rm log -r" # Removes PID files just incase
   end
 end
