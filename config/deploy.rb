@@ -26,11 +26,10 @@ end
 
 namespace :deploy do
   task :start do
-    #before_deploy
-    #sleep(3)
-    #run "cd #{current_path}; rm log -r && mkdir log"
-    #run "cd #{current_path}; merb -p 6000 -e production -a thin -d"
-    #run "monit"
+    before_deploy
+    sleep(3)
+    run "cd #{current_path}; rm log -r && mkdir log"
+    run "cd #{current_path}; merb -p 6000 -e production -a thin -d"
   end
   
   task :stop do
