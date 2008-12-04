@@ -1,5 +1,6 @@
 class Application < Merb::Controller
   before :fetch_current_user
+  before :check_mysql_connection
   
   def current_user
     @current_user
@@ -16,6 +17,14 @@ class Application < Merb::Controller
   def fetch_current_user
     return if session[:user_id].blank?
     @current_user = User.find(session[:user_id])
+  end
+  
+  private
+  
+  def check_mysql_connection
+    unless User.connection.active? 
+      User.connection.reconnect! 
+    end
   end
   
 end
