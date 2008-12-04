@@ -5,7 +5,7 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 default_run_options[:pty] = true
-set :repository,  "git@gitbase.com:dancingorange/embedit/main.git"
+set :repository,  "git@gitbase.com:dancingorange/i-created-something-cool/main.git"
 set :scm, "git"
 #set :scm_passphrase, "p@ssw0rd" #This is your custom users password
 set :user, "root"
@@ -15,9 +15,9 @@ set :user, "root"
 # via the :deploy_to variable:
 set :deploy_to, "/usr/local/www/#{application}"
 
-role :app, "208.78.103.199"
-role :web, "208.78.103.199"
-role :db,  "208.78.103.199", :primary => true
+role :app, "67.207.149.24"
+role :web, "67.207.149.24"
+role :db,  "67.207.149.24", :primary => true
 
 #required for OS X!!!
 on :start do
@@ -26,10 +26,10 @@ end
 
 namespace :deploy do
   task :start do
-    before_deploy
-    sleep(3)
-    run "cd #{current_path}; rm log -r && mkdir log"
-    run "cd #{current_path}; merb -p 6000 -e production -a thin -d"
+    #before_deploy
+    #sleep(3)
+    #run "cd #{current_path}; rm log -r && mkdir log"
+    #run "cd #{current_path}; merb -p 6000 -e production -a thin -d"
     #run "monit"
   end
   
