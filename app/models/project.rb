@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
   has_many :hearts
   
   validates_presence_of :title, :link
+  validates_format_of :link, :with => /^http:\/\//
   
   after_create :create_stub
   
