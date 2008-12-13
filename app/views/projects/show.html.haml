@@ -6,6 +6,10 @@
     = link_to @project.user.name
   
   %h2= link_to @project.link, @project.link
+  
+  - if @project.belongs_to(current_user.id)
+    %h2
+      = link_to 'Edit', resource(@project, :edit)
 
   %p{:class => 'likes'}
     likes:

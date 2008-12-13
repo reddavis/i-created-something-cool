@@ -16,4 +16,11 @@ class Project < ActiveRecord::Base
     return true if self.hearts.find(:first, :conditions => ['user_id = ?', user.id])
   end
   
+  def belongs_to(user_id)
+    puts self.user_id
+    puts user_id
+    return true if self.user_id == (user_id)
+    false
+  end
+  
 end

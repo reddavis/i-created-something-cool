@@ -33,16 +33,15 @@ class Projects < Application
 
   # GET /projects/:id/edit
   def edit
-    only_provides :html
     @project = Project.find_by_stub(params[:id])
-    raise NotFound unless @project
+    raise NotFound unless @project && @project.belongs_to(current_user.id)
     render
   end
 
   # PUT /projects/:id
   def update
     @project = Project.find_by_stub(params[:id])
-    raise NotFound unless @project
+    raise NotFound unless @project && @project.belongs_to(current_user.id)
     if @project.update_attributes(params[:project])
       redirect url(:project, @project)
     else

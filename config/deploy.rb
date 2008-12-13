@@ -4,7 +4,6 @@ default_run_options[:pty] = true
 
 ssh_options[:forward_agent] = true
 
-default_run_options[:pty] = true
 set :repository,  "git@gitbase.com:dancingorange/i-created-something-cool/main.git"
 set :scm, "git"
 #set :scm_passphrase, "p@ssw0rd" #This is your custom users password
@@ -37,22 +36,10 @@ namespace :deploy do
   end
   
   task :restart do
-    #sudo /etc/init.d/nginx start
-    #run "sudo kill `cat /usr/local/nginx/logs/nginx.pid`"
-    #run "sudo /usr/local/sbin/nginx"
     start
   end
     
   task :before_deploy do
-    #run "monit quit"
     run "merb -m #{current_path} -K all"
-    #run "cd #{current_path}; rm log -r" # Removes PID files just incase
-  end
-end
-
-namespace :gems do
-  task :install_gems do
-    #gems = %w(merb merb-more merb_activerecord activesupport reddavis-embedit)
-    #gems.each {|gem| sudo "gem install #{gem}"}
   end
 end
